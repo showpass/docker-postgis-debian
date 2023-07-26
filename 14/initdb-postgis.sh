@@ -38,6 +38,8 @@ for DB in template1 "$POSTGRES_DB"; do
 EOSQL
 done
 
+pg_ctl restart
+
 # Configure Replication Role
 echo [*] configuring $REPLICATION_ROLE instance
 
