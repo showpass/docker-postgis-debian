@@ -23,6 +23,6 @@ for DB in template_postgis "$POSTGRES_DB" "${@}"; do
         CREATE EXTENSION IF NOT EXISTS postgis_tiger_geocoder VERSION '$POSTGIS_VERSION';
         ALTER EXTENSION postgis_tiger_geocoder UPDATE TO '$POSTGIS_VERSION';
         -- Create PGVECTOR EXTENTION
-        CREATE EXTENSION IF NOT EXISTS vector;
+        CREATE EXTENSION vector;
     "
 done

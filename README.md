@@ -8,10 +8,13 @@ Features:
 - PG_TRGM installation
 - PG_LOGICAL installation  
 - Database replication
+- PG_VECTOR installation
 
 Supported tags:
 
 * [9.6](https://github.com/showpass/docker-postgis/tree/master/9.6)
+* [14](https://github.com/showpass/docker-postgis/tree/master/14)
+* [14-circle](https://github.com/showpass/docker-postgis/tree/master/14-circle)
 
 
 Adapted from:
@@ -19,5 +22,6 @@ Adapted from:
 - [PostGIS example](https://github.com/appropriate/docker-postgis)
 - [DB replication example #1](https://github.com/DanielDent/docker-postgres-replication)
 - [DB replication example #2](https://github.com/nebirhos/docker-postgres-replication)
+- [PG VECTOR doc](https://github.com/pgvector/pgvector)
 
 For more info on this Docker image, please see these projects.
