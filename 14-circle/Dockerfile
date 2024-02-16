@@ -24,7 +24,7 @@ ENV POSTGRES_MASTER_SERVICE_PORT 5432
 
 
 ENV POSTGIS_MAJOR 3
-ENV POSTGIS_VERSION 3.4.0+dfsg-1.pgdg110+1
+ENV POSTGIS_VERSION 3.4.2+dfsg-1.pgdg110+1
 
 RUN apt-get update \
       && apt-cache showpkg postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR \
