@@ -6,9 +6,8 @@ Features:
 
 - PostGIS installation
 - PG_TRGM installation
-- PG_LOGICAL installation  
-- Database replication
 - PG_VECTOR installation
+- Unaccent installation
 
 Supported tags:
 

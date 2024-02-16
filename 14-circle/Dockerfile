@@ -24,7 +24,7 @@ ENV POSTGRES_MASTER_SERVICE_PORT 5432
 
 
 ENV POSTGIS_MAJOR 3
-ENV POSTGIS_VERSION 3.4.0+dfsg-1.pgdg110+1
+ENV POSTGIS_VERSION 3.4.2+dfsg-1.pgdg110+1
 
 RUN apt-get update \
       && apt-cache showpkg postgresql-$PG_MAJOR-postgis-$POSTGIS_MAJOR \
@@ -42,5 +42,4 @@ RUN apt update && \
 
 RUN mkdir -p /docker-entrypoint-initdb.d
 COPY ./initdb-postgis.sh /docker-entrypoint-initdb.d/10_postgis.sh
-COPY ./update-postgis.sh /usr/local/bin
 
