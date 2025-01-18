@@ -60,12 +60,19 @@ gawk '/^#shared_preload_libraries/ { sub(/^#/, "") }
      }
      {print}' $PGDATA/postgresql.conf > ~/tmp.conf && mv ~/tmp.conf $PGDATA/postgresql.conf
 
-for DB in template_postgis template1 "$POSTGRES_DB"; do
-	echo "Loading PostGIS extensions into $DB"
+for DB in template_postgis "$POSTGRES_DB"; do
+	echo "Enabling pg_hint_plan and updating PostGIS extensions on $DB"
 	"${psql[@]}" --dbname="$DB" <<-'EOSQL'
     CREATE EXTENSION IF NOT EXISTS pg_hint_plan;
     ALTER EXTENSION postgis UPDATE;
     ALTER EXTENSION postgis_topology UPDATE;
     ALTER EXTENSION postgis_tiger_geocoder UPDATE;
+EOSQL
+done
+
+for DB in template1; do
+	echo "Enabling pg_hint_plan on $DB"
+	"${psql[@]}" --dbname="$DB" <<-'EOSQL'
+    CREATE EXTENSION IF NOT EXISTS pg_hint_plan;
 EOSQL
 done

@@ -24,7 +24,7 @@ EOSQL
 
 # Load PostGIS into both template_database and $POSTGRES_DB
 for DB in template_postgis "$POSTGRES_DB"; do
-	echo "Loading PostGIS extensions into $DB"
+	echo "Loading PostGIS, fuzzystrmatch, vector, unaccent and pg_hint_plan extensions into $DB"
 	"${psql[@]}" --dbname="$DB" <<-'EOSQL'
 		CREATE EXTENSION IF NOT EXISTS postgis;
 		CREATE EXTENSION IF NOT EXISTS postgis_topology;
@@ -41,7 +41,7 @@ done
 
 # Load PG_TRGM into both template1 and $POSTGRES_DB
 for DB in template1 "$POSTGRES_DB"; do
-	echo "Loading PG_TRGM extensions into $DB"
+	echo "Loading PG_TRGM, vector, unaccent and pg_hint_plan extensions into $DB"
 	"${psql[@]}" --dbname="$DB" <<-'EOSQL'
 		CREATE EXTENSION IF NOT EXISTS pg_trgm;
         CREATE EXTENSION IF NOT EXISTS vector;
