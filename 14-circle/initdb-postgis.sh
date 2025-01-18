@@ -5,6 +5,7 @@ set -e
 # Perform all actions as $POSTGRES_USER
 export PGUSER="$POSTGRES_USER"
 
+# This gawk operation adds pg_hint_plan to shared_preload_libraries if it isn't added.
 gawk '/^#shared_preload_libraries/ { sub(/^#/, "") }
      /^shared_preload_libraries/ {
          if ($3 == "\047\047") {
