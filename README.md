@@ -8,6 +8,7 @@ Features:
 - PG_TRGM installation
 - PG_VECTOR installation
 - Unaccent installation
+- PG_HINT_PLAN installation
 
 Supported tags:
 
